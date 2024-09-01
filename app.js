@@ -1,16 +1,13 @@
 var app = require('./config/server');
 
-app.get('/', function (req, res) {
-  res.render("home/index");
-});
+//incluindo módulos dentro da aplicação
+var rotaNoticias = require('./app/routes/noticias')(app); //é posssivel passar na frente do require (app) a execução reduzindo assim a codificação;
+//Executando a função
+//rotaNoticias(app);
 
-app.get('/formulario_inclusao_noticia', function (req, res) {
-  res.render("admin/form_add_noticia");
-});
+var rotaHome = require('./app/routes/home')(app);
 
-app.get('/noticias', function (req, res) {
-  res.render("noticias/noticia");
-});
+var rotaformularioInclusaoNoticia = require('./app/routes/formulario_inclusao_noticia')(app);
 
 app.listen(3000, function () {
   console.log('Servidor ON');
