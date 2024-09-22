@@ -5,4 +5,4 @@ module.exports = function (app) {
     res.render("admin/form_add_noticia");
   });
 
-};
+}//modulo não é fechado com ;
