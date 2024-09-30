@@ -13,5 +13,8 @@
     "express": "^4.19.2",
     "mysql2": "^3.11.3",
     "save": "^2.9.0"
+  },
+  "devDependencies": {
+    "ejs-lint": "^2.0.0"
   }
 }
