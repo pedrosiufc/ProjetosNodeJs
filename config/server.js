@@ -8,6 +8,7 @@ app.set('views', './app/views'); //setando aqui as rotas
 consign()
   .include('app/routes')
   .then('config/dbConnection.js')
+  .then('app/models')
   .into(app);
 //consign escaneia a pasta routes com seus módulos e inclui no servidor 
 
