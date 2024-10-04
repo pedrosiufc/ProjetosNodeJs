@@ -14,6 +14,7 @@ consign()
   .include('app/routes')
   .then('config/dbConnection.js')
   .then('app/models')
+  .then('app/controllers')
   .into(app);
 //consign escaneia a pasta routes com seus módulos e inclui no servidor 
 
