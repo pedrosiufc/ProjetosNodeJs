@@ -4,11 +4,12 @@ function NoticiasDAO(connection) {
 }
 
 NoticiasDAO.prototype.getNoticias = function (callback) {
-  this._connection.query("SELECT * FROM noticias", callback);
+  this._connection.query("SELECT * FROM noticias order by data_criacao desc", callback);
 }
 
-NoticiasDAO.prototype.getNoticia = function (callback) {
-  this._connection.query("SELECT * FROM noticias where id_noticia = 2", callback);
+NoticiasDAO.prototype.getNoticia = function (id_noticia, callback) {
+  console.log(id_noticia.id_noticia);
+  this._connection.query("SELECT * FROM noticias where id_noticia = " + id_noticia.id_noticia, callback);
 }
 
 //a persistência fica automática pois os names dados são iguais aos que estão no bd, passados através de JSON
